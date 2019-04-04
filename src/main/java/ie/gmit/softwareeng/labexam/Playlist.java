@@ -20,19 +20,15 @@ public class Playlist {
         return playlistName;
     }
 
+    public boolean contains(Song song) {
+        return songs.contains(song);
+    }
+
     public void addSong(Song song) {
         if (songs.contains(song)) {
             throw new PlaylistException("Song already in playlist");
         }
         songs.add(song);
-    }
-
-    public boolean contains(Song song) {
-        return songs.contains(song);
-    }
-
-    public int getNumberOfSongs() {
-        return songs.size();
     }
 
     public void removeSong(Song song) {
@@ -42,25 +38,30 @@ public class Playlist {
         songs.remove(song);
     }
 
-    public void reverse() {
-        Collections.reverse(songs);
+    public int getNumberOfSongs() {
+        return songs.size();
     }
 
     public Song getSongAt(int i) {
         return songs.get(i);
     }
 
-    public void shuffle() {
-        Collections.shuffle(songs);
-    }
-
     public void clear() {
         songs.clear();
+    }
+
+
+    public void reverse() {
+        Collections.reverse(songs);
     }
 
     public Song[] getAllSongs() {
         Song[] songArray = new Song[songs.size()];
         return songs.toArray(songArray);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(songs);
     }
 
     public Song getCurrentSong() {
@@ -71,8 +72,26 @@ public class Playlist {
         return songs.get(currentSong);
     }
 
+    public Song getNextSong() {
+        if ((currentSong + 1) >= songs.size()) {
+            return null;
+        }
+        return songs.get(currentSong + 1);
+    }
+
     public void nextSong() {
         currentSong++;
+    }
+
+    public Song getPreviousSong() {
+        if (currentSong == 0) {
+            return null;
+        }
+        return songs.get(currentSong - 1);
+    }
+
+    public void previousSong() {
+        currentSong--;
     }
 
     public void goToIndex(int i) {
@@ -81,23 +100,5 @@ public class Playlist {
         }
 
         currentSong = i;
-    }
-
-    public Song getNextSong() {
-        if ((currentSong + 1) >= songs.size()) {
-            return null;
-        }
-        return songs.get(currentSong + 1);
-    }
-
-    public void previousSong() {
-        currentSong--;
-    }
-
-    public Song getPreviousSong() {
-        if (currentSong == 0) {
-            return null;
-        }
-        return songs.get(currentSong - 1);
     }
 }
