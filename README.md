@@ -48,4 +48,3 @@ Push the code to your fork
 > git push origin master
 
 Open a Pull Request from your fork to the original repo.
-
