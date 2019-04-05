@@ -41,11 +41,11 @@ public class Playlist {
     }
 
     public Song getSongAt(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.get(index);
     }
 
     public void clear() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        songs.removeAll(songs);
     }
 
     public void reverse() {
