@@ -1,71 +1,105 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Playlist {
+
+    private String name;
+
+    private List<Song> songs = new ArrayList<>();
+
+    private Song currentSong;
+
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        name = playlistName;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.contains(song);
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(contains(song)) {
+            throw new PlaylistException(song.getTitle() + " is already in playlist");
+        }
+        songs.add(song);
+
+        if(currentSong == null) {
+            currentSong = song;
+        }
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(songs.contains(song)) {
+            songs.remove(song);
+        } else {
+            throw new PlaylistException(song.getTitle() + " does not exist in playlist");
+        }
     }
 
     public int getNumberOfSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.size();
     }
 
     public Song getSongAt(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.get(index);
     }
 
     public void clear() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        songs.removeAll(songs);
     }
 
     public void reverse() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Collections.reverse(songs);
     }
 
     public Song[] getAllSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Song[] array = new Song[songs.size()];
+        for(int index = 0; index < songs.size(); index++) {
+            array[index] = songs.get(index);
+        }
+        return array;
     }
 
     public void shuffle() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Collections.shuffle(songs);
     }
 
     public Song getCurrentSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return currentSong;
     }
 
     public Song getNextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int next = songs.indexOf(currentSong) + 1;
+        if(next >= songs.size()) {
+            return null;
+        }
+        return songs.get(next);
     }
 
     public void nextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = getNextSong();
     }
 
     public Song getPreviousSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int previous = songs.indexOf(currentSong) - 1;
+        if(previous < 0) {
+            return null;
+        }
+        return songs.get(previous);
     }
 
     public void previousSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = getPreviousSong();
     }
 
     public void goToIndex(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = songs.get(index);
     }
 }
