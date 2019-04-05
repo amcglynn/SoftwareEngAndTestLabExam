@@ -1,20 +1,32 @@
 package ie.gmit.softwareeng.labexam;
 
 public class Playlist {
-    public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
 
+    public String playlistName;
+    public String name;
+    public String song;
+    public String songAt;
+    public String allSongs;
+    //ArrayList<Song>;
+
+
+    public Playlist(String playlistName) {
+        this.playlistName = playlistName;
+        this.song = song;
+        this.songAt = songAt;
+        this.allSongs = allSongs;
+
+    }
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlistName;
     }
 
     public boolean contains(Song song) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    public Song addSong(Song song) {
+        return song;
     }
 
     public void removeSong(Song song) {
@@ -25,8 +37,8 @@ public class Playlist {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    public Song getSongAt(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    public String getSongAt(int index) {
+        return songAt;
     }
 
     public void clear() {
@@ -37,8 +49,8 @@ public class Playlist {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    public Song[] getAllSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+    public String getAllSongs() {
+        return allSongs;
     }
 
     public void shuffle() {
