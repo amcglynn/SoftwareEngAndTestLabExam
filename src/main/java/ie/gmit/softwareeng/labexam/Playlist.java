@@ -1,12 +1,15 @@
 package ie.gmit.softwareeng.labexam;
 
 public class Playlist {
+
+    private String name;
+
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        name = playlistName;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
     }
 
     public boolean contains(Song song) {
