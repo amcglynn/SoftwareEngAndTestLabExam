@@ -1,20 +1,36 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.*;
+
+
 public class Playlist {
+
+    public String name;
+    public static int min;
+    public static int max;
+
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        playlistName ="Test1";
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        String name = "Test Playlist";
+        return name;
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        List<String> list = new ArrayList<>();
+        if (list.contains(song)){
+            return true;
+        }
+        return false;
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        List<String> newSongs = new ArrayList<>();
+        //Song song1 = new Song("Name", "Title");
+        //newSongs.add();
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void removeSong(Song song) {
@@ -34,7 +50,8 @@ public class Playlist {
     }
 
     public void reverse() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        List<String> list = new ArrayList<>();
+        Collections.reverse(list);
     }
 
     public Song[] getAllSongs() {
