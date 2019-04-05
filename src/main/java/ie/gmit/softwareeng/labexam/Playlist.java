@@ -22,6 +22,9 @@ public class Playlist {
     }
 
     public void addSong(Song song) {
+        if(contains(song)) {
+            throw new PlaylistException(song.getTitle() + " is already in playlist");
+        }
         songs.add(song);
     }
 
