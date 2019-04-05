@@ -29,7 +29,11 @@ public class Playlist {
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(songs.contains(song)) {
+            songs.remove(song);
+        } else {
+            throw new PlaylistException(song.getTitle() + " does not exist in playlist");
+        }
     }
 
     public int getNumberOfSongs() {
