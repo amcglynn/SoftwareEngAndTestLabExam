@@ -1,56 +1,76 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.Collections;
+import java.util.ArrayList;
+
 public class Playlist {
-    public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    ArrayList<Song> playlist;
+    String playlistName;
+    int songIndex;
+
+    public Playlist(String ledZeppelin) {
+        playlistName = ledZeppelin;
+        playlist = new ArrayList<>();
+        songIndex = 0;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlistName;
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        // Returns true if this list contains the specified element
+        return playlist.contains(song);
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(playlist.contains(song)) throw new PlaylistException("Song in playlist");
+        else playlist.add(song);        // Inserts the specified element at the specified position in this list
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(!playlist.contains(song)) throw new PlaylistException("Song not in playist");
+        else playlist.remove(song);     // Removes the element at the specified position in this list
     }
 
     public int getNumberOfSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        // Returns the number of elements in this list
+        return playlist.size();
     }
 
     public Song getSongAt(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlist.get(index);
     }
 
     public void clear() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        // Removes all of the elements from this list
+        playlist.clear();
     }
 
     public void reverse() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        // Reverses the order of the elements in the specified list
+        Collections.reverse(playlist);
     }
 
     public Song[] getAllSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Song[] results = new Song[playlist.size()];
+        for (int i = 0; i < playlist.size(); i++) results[i] = playlist.get(i);
+        return results;
     }
 
     public void shuffle() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        // Randomly permutes the specified list using a default source of randomness
+        Collections.shuffle(playlist);
     }
 
     public Song getCurrentSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(playlist.size() <= 0) return null;
+        else return playlist.get(songIndex);
     }
 
     public Song getNextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(songIndex >= playlist.size()-1) throw new UnsupportedOperationException("Not implemented yet");
+        else throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void nextSong() {
