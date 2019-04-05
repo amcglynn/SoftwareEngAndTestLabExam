@@ -1,16 +1,25 @@
 package ie.gmit.softwareeng.labexam;
 
-public class Playlist {
-    public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+import java.util.ArrayList;
 
+public class Playlist {
+
+    String LabExamHits;
+    ArrayList<Song> playlist = new ArrayList<Song>();
+
+
+    public Playlist(String playlistName) {
+
+        LabExamHits = playlistName;
+    }
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        //throw new UnsupportedOperationException("Not implemented yet");
+        return LabExamHits;
     }
 
     public boolean contains(Song song) {
         throw new UnsupportedOperationException("Not implemented yet");
+
     }
 
     public void addSong(Song song) {
