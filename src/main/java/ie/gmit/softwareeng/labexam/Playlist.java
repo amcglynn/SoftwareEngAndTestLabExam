@@ -1,6 +1,7 @@
 package ie.gmit.softwareeng.labexam;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Playlist {
@@ -49,7 +50,7 @@ public class Playlist {
     }
 
     public void reverse() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Collections.reverse(songs);
     }
 
     public Song[] getAllSongs() {
