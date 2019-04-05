@@ -33,7 +33,7 @@ public class Playlist {
     }
 
     public int getNumberOfSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.size();
     }
 
     public Song getSongAt(int index) {
