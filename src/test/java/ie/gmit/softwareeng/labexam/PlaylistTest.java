@@ -30,7 +30,7 @@ public class PlaylistTest {
         assertFalse(playlist.contains(song));
     }
 
-    @Test
+    @Test(expected = PlaylistException.class)//Come back to
     public void testAddSong() {
         Song song = new Song("Led Zeppelin", "Dazed and Confused");
         playlist.addSong(song);
@@ -253,7 +253,7 @@ public class PlaylistTest {
         assertEquals(song2, playlist.getCurrentSong());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = PlaylistException.class)
     public void testGoToIndexThrowsExceptionWhenGoingToANotExistentIndex() {
         Song song1 = new Song("Led Zeppelin", "Four Sticks");
         Song song2 = new Song("Led Zeppelin", "Rock and Roll");
