@@ -76,7 +76,8 @@ public class Playlist {
     }
 
     public Song getNextSong() {
-        return songs.get(songs.indexOf(currentSong) + 1);
+
+        return (songs.size() > songs.indexOf(currentSong) + 1) ? (songs.get(songs.indexOf(currentSong) + 1)) : null;
     }
 
     public void nextSong() {
