@@ -10,6 +10,8 @@ public class Playlist {
 
     private List<Song> songs = new ArrayList<>();
 
+    private Song currentSong;
+
     public Playlist(String playlistName) {
         name = playlistName;
     }
@@ -27,6 +29,10 @@ public class Playlist {
             throw new PlaylistException(song.getTitle() + " is already in playlist");
         }
         songs.add(song);
+
+        if(currentSong == null) {
+            currentSong = song;
+        }
     }
 
     public void removeSong(Song song) {
@@ -66,7 +72,7 @@ public class Playlist {
     }
 
     public Song getCurrentSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return currentSong;
     }
 
     public Song getNextSong() {
