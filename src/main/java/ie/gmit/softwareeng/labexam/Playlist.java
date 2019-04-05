@@ -1,8 +1,13 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Playlist {
 
     private String name;
+
+    private List<Song> songs = new ArrayList<>();
 
     public Playlist(String playlistName) {
         name = playlistName;
@@ -13,7 +18,7 @@ public class Playlist {
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.contains(song);
     }
 
     public void addSong(Song song) {
