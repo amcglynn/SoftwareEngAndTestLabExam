@@ -100,6 +100,6 @@ public class Playlist {
     }
 
     public void goToIndex(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = songs.get(index);
     }
 }
