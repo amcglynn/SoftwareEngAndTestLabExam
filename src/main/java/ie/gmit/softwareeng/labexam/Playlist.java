@@ -84,15 +84,19 @@ public class Playlist {
     }
 
     public void nextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = getNextSong();
     }
 
     public Song getPreviousSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int previous = songs.indexOf(currentSong) - 1;
+        if(previous < 0) {
+            return null;
+        }
+        return songs.get(previous);
     }
 
     public void previousSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        currentSong = getPreviousSong();
     }
 
     public void goToIndex(int index) {
