@@ -37,7 +37,7 @@ public class PlaylistTest {
         assertFalse(playlist.contains(song));
     }
 
-    @Test//(expected = UnsupportedOperationException.class)
+    @Test
     public void testAddSong() {
         Song song = new Song("Led Zeppelin", "Dazed and Confused");
         playlist.addSong(song);

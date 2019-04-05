@@ -3,8 +3,11 @@ package ie.gmit.softwareeng.labexam;
 import java.util.ArrayList;
 
 public class Playlist {
+
     String playlistName;
-    //ArrayList<Song> playlist = 0;
+    ArrayList<Song> song = new ArrayList<>();
+
+
     public Playlist(String playlistName) {
         this.playlistName=playlistName;
         //throw new UnsupportedOperationException("Not implemented yet");
@@ -20,7 +23,8 @@ public class Playlist {
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        addSong(song);
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void removeSong(Song song) {
