@@ -1,24 +1,43 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.ArrayList;
+
 public class Playlist {
+
+    String Playlistname;
+    ArrayList<Song> array = new ArrayList<Song>();
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.Playlistname = playlistName;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return Playlistname;
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(array.contains(song))
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (array.contains(song)){
+            throw new PlaylistException("Song already in");
+        }
+        else
+        {
+            array.add(song);
+        }
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (array.contains(song))
+        {
+            array.remove(song);
+        }
     }
 
     public int getNumberOfSongs() {
