@@ -18,7 +18,6 @@ public class PlaylistTest {
     public void setUp() {
         playlist = new Playlist("Test Playlist");
     }
-
     @Test
     public void testGetPlaylistName() {
         assertEquals("Test Playlist", playlist.getName());

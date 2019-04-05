@@ -1,32 +1,67 @@
 package ie.gmit.softwareeng.labexam;
 
+
+import java.util.ArrayList;
+
+
+
 public class Playlist {
+
+    String playlistName;
+    ArrayList<String> myList = new ArrayList<String>();
+
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.playlistName = playlistName;
+        //ArrayList<String> myList = new ArrayList<String>();
+        //add to the array
+        //myList.add(playlistName);
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlistName;
     }
+
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        //String title = "Good Times Bad Times";
+        //System.out.println(song.getTitle());
+        if(myList.contains(song.getTitle()) ){
+            System.out.println("Song in playlist");
+
+            return true;
+        }
+        else {
+            System.out.println("Song not in playlist");
+
+            return false;
+        }
     }
+
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("Adding: " + song.getTitle() );
+        myList.add(song.getTitle());
     }
 
+
+
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("Removing: " + song.getTitle() );
+        myList.remove(song.getTitle());
     }
 
     public int getNumberOfSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("No of songs: " + myList.size() );
+
+        return myList.size();
     }
 
     public Song getSongAt(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        //throw new UnsupportedOperationException("Not implemented yet");
+        Object s= myList.get(index);
+
+        //return s;
+        throw new UnsupportedOperationException("Not done yet");
     }
 
     public void clear() {
@@ -66,6 +101,6 @@ public class Playlist {
     }
 
     public void goToIndex(int index) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        myList.indexOf(index);
     }
 }
