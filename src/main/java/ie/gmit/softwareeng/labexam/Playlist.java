@@ -76,7 +76,11 @@ public class Playlist {
     }
 
     public Song getNextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int next = songs.indexOf(currentSong) + 1;
+        if(next >= songs.size()) {
+            return null;
+        }
+        return songs.get(next);
     }
 
     public void nextSong() {
