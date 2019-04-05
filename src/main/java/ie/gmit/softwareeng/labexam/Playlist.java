@@ -6,6 +6,8 @@ import java.util.Collections;
 public class Playlist {
     private String playlistName;
     ArrayList<Song> songs = new ArrayList<Song>();
+    Song currentSong;
+    boolean firstSong = true;
 
     public Playlist(String playlistName) {
         this.playlistName = playlistName;
@@ -22,8 +24,14 @@ public class Playlist {
     public void addSong(Song song) {
         if (songs.contains(song))
             throw new PlaylistException("Song already exists");
-        else
+        else{
             songs.add(song);
+            if (firstSong){
+                currentSong = songs.get(0);
+                firstSong = false;
+            }
+        }
+
     }
 
     public void removeSong(Song song) {
@@ -64,11 +72,11 @@ public class Playlist {
     }
 
     public Song getCurrentSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return currentSong;
     }
 
     public Song getNextSong() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.get(songs.indexOf(currentSong) + 1);
     }
 
     public void nextSong() {
