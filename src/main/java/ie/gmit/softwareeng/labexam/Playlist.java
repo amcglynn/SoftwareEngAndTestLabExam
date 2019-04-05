@@ -65,7 +65,7 @@ public class Playlist {
     }
 
     public Song getCurrentSong() {
-        if (songs.size() == 0) {
+        if (songs.isEmpty()) {
             return null;
         }
 
