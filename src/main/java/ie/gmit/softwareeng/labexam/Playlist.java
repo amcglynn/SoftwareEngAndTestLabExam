@@ -19,11 +19,17 @@ public class Playlist {
     }
 
     public void addSong(Song song) {
-        songs.add(song);
+        if (songs.contains(song))
+            throw new PlaylistException("Song already exists");
+        else
+            songs.add(song);
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (songs.contains(song)){
+            songs.remove(song);
+        }
+        else throw new PlaylistException("Song not found");
     }
 
     public int getNumberOfSongs() {
