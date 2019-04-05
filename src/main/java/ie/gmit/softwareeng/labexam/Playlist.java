@@ -23,7 +23,10 @@ public class Playlist {
     }
 
     public void addSong(Song song) {
-        addSong(song);
+        for(i : song, ){
+            addSong(song);
+        }
+
         //throw new UnsupportedOperationException("Not implemented yet");
     }
 
