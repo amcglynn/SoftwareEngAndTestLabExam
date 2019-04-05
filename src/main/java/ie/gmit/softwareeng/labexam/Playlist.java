@@ -26,7 +26,8 @@ public class Playlist {
     }
 
     public void removeSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (!playlist.contains(song)) throw new PlaylistException("Song does not exists in the playlist");
+        playlist.remove(song);
     }
 
     public int getNumberOfSongs() {
