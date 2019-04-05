@@ -1,12 +1,16 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.ArrayList;
+
 public class Playlist {
+    private String playlistName;
+
     public Playlist(String playlistName) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.playlistName = playlistName;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlistName;
     }
 
     public boolean contains(Song song) {
