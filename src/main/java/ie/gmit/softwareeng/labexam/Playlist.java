@@ -19,7 +19,7 @@ public class Playlist {
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        songs.add(song);
     }
 
     public void removeSong(Song song) {
