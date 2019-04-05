@@ -1,7 +1,13 @@
 package ie.gmit.softwareeng.labexam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Playlist {
+
     String playlistName;
+    List<Song> playlist = new ArrayList<>();
+
     public Playlist(String playlistName) {
         this.playlistName=playlistName;
     }
@@ -11,11 +17,12 @@ public class Playlist {
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return playlist.contains(song);
     }
 
     public void addSong(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (playlist.contains(song)) throw new PlaylistException("Song already exists in the playlist");
+       playlist.add(song);
     }
 
     public void removeSong(Song song) {
