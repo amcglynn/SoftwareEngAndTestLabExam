@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String playlistName;
+    ArrayList<Song> songs = new ArrayList<Song>();
 
     public Playlist(String playlistName) {
         this.playlistName = playlistName;
@@ -14,7 +15,7 @@ public class Playlist {
     }
 
     public boolean contains(Song song) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return songs.contains(song);
     }
 
     public void addSong(Song song) {
