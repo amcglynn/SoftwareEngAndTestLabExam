@@ -54,11 +54,15 @@ public class Playlist {
     }
 
     public Song[] getAllSongs() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Song[] array = new Song[songs.size()];
+        for(int index = 0; index < songs.size(); index++) {
+            array[index] = songs.get(index);
+        }
+        return array;
     }
 
     public void shuffle() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Collections.shuffle(songs);
     }
 
     public Song getCurrentSong() {
